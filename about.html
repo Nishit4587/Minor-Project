@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personle Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="index.js" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+</head>
+
+<body>
+    <div class="hero">
+        <nav class="navbar">
+            <img src="images/logo.png" class="logo" />
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <!-- <li><a href="#">PORTFOLIO</a></li> -->
+                <li><a href="service.html">SERVICES</a></li>
+                <li><a href="ContactMe.html">CONTACT ME</a></li>
+            </ul>
+        </nav>
+
+    <!-- about section start -->
+    <section class="about" id="about">
+        <div class="max-width">
+            <h2 class="title">About me</h2>
+                <div class="about-content">
+                    <div class="column-left">
+                        <!-- <img src="images/profile-1.jpeg" alt=""> -->
+                    </div>
+                <div class="container">
+                    <p class="word1">I'm Nishit Patel and I'm a</p>
+                    <p class="word1" id="an-text"></p>
+                    <p id="an-text" class="word1">|</p>
+                    <br /><br />
+                    <div class="about-discription">
+                Hello my name is Nishit Patel. I am a Front End Developer. I
+                have completed my studies from Parul Institute of Engineering
+                and Technology in <b>Computer Science and Engineering</b>.
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <div class="social">
+        <a href="#">
+            <img src="images/facebook.png" height="30px" width="30px" alt=""/>
+        </a>
+        <a href="https://www.instagram.com/nishit2101/">
+            <img src="images/instagram.png" height="30px" width="30px" alt=""/>
+        </a>
+        <a href="https://www.linkedin.com/in/nishit-patel-6b5755203/">
+            <img src="images/Linkdin.png" height="30px" width="30px" alt=""/>
+        </a>
+    </div>
+    </div>
+
+    <style type="text/css" data-typed-js-css="true">
+        .typed-cursor {
+            opacity: 1;
+        }
+
+        .typed-cursor.typed-cursor--blink {
+            animation: typedjsBlink 0.7s infinite;
+            -webkit-animation: typedjsBlink 0.7s infinite;
+            animation: typedjsBlink 0.7s infinite;
+        }
+
+        @keyframes typedjsBlink {
+        50% {
+            opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes typedjsBlink {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+    </style>
+    <script>
+        const words = ["Developer", "Blogger", "Designer"];
+        let i = 0;
+        let counter;
+        function typeNow() {
+            let word = words[i].split("");
+            var loopTyping = function () {
+                if (word.length > 0) {
+                    document.getElementById("an-text").innerHTML += word.shift();
+                } 
+                else {  
+                    deleteNow();
+                return false;
+                }
+                counter = setTimeout(loopTyping, 200);
+            };
+        loopTyping();
+        }
+
+        function deleteNow() {
+            let word = words[i].split("");
+            var loopDeleting = function () {
+            if (word.length > 0) {
+                word.pop();
+                document.getElementById("an-text").innerHTML = word.join("");
+            } 
+            else {
+                if (words.length > i + 1) {
+                    i++;
+                } 
+            else {
+                i = 0;
+                }
+            typeNow();
+            return false;
+            }
+            counter = setTimeout(loopDeleting, 200);
+        };
+        loopDeleting();
+        }
+        typeNow();
+    </script>
+    </body>
+</html>
